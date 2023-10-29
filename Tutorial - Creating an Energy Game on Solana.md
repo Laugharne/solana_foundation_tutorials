@@ -1,4 +1,31 @@
-# [](https://youtu.be/YYQtRCXJBgs?t=0) Introduction to Building an Energy System for a Game on Solana
+<!-- TOC -->
+
+- [Introduction to Building an Energy System for a Game on Solana](#introduction-to-building-an-energy-system-for-a-game-on-solana)
+	- [Building the Energy System](#building-the-energy-system)
+	- [Implementing in the App](#implementing-in-the-app)
+- [Conclusion](#conclusion)
+- [06:23 Initializing the Account and Player](#0623-initializing-the-account-and-player)
+	- [Account Initialization](#account-initialization)
+	- [Account Change](#account-change)
+- [06:40 Updating Energy in Game State](#0640-updating-energy-in-game-state)
+	- [Energy Update](#energy-update)
+- [07:00 Handling Time-based Energy Refill](#0700-handling-time-based-energy-refill)
+	- [Time-based Energy Refill](#time-based-energy-refill)
+- [07:19 Account Data Representation](#0719-account-data-representation)
+	- [Account Data Representation](#account-data-representation)
+- [08:03 Initialization Click Event](#0803-initialization-click-event)
+	- [Initialization Click Event](#initialization-click-event)
+- [08:21 Shop Click Event](#0821-shop-click-event)
+	- [Shop Click Event](#shop-click-event)
+- [09:14 Building a Mobile Game](#0914-building-a-mobile-game)
+	- [Building a Mobile Game](#building-a-mobile-game)
+- [09:37 Conclusion](#0937-conclusion)
+	- [Conclusion](#conclusion)
+
+<!-- /TOC -->
+
+
+# [Introduction to Building an Energy System for a Game on Solana](https://youtu.be/YYQtRCXJBgs?t=0)
 
 Section Overview: In this section, the speaker introduces the topic of building an energy system for a game called "Solar Lumberjack" on Solana. The energy system is similar to those found in traditional casual games like Candy Crush, where players have an energy bar that slowly refills over time and is used to perform actions in the game.
 

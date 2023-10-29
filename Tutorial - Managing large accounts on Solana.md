@@ -1,4 +1,56 @@
-# [](https://youtu.be/zs_yU0IuJxc?t=0) Memory on Solana
+# [Managing large accounts on Solana](https://youtu.be/zs_yU0IuJxc) 
+
+<!-- TOC -->
+
+- [Managing large accounts on Solana](#managing-large-accounts-on-solana)
+	- [Memory Limitations on Solana](#memory-limitations-on-solana)
+- [00:25 Saving Stack Space and Creating Larger Accounts](#0025-saving-stack-space-and-creating-larger-accounts)
+	- [Saving Stack Space](#saving-stack-space)
+	- [Creating Larger Accounts](#creating-larger-accounts)
+- [01:11 Stack Size Limit Test](#0111-stack-size-limit-test)
+	- [Test Description](#test-description)
+- [02:02 Zero Copy Serialization Challenge](#0202-zero-copy-serialization-challenge)
+	- [Zero Copy Serialization Challenge](#zero-copy-serialization-challenge)
+- [03:19 Running Tests and Analyzing Errors](#0319-running-tests-and-analyzing-errors)
+	- [Running Tests](#running-tests)
+	- [Analyzing Errors](#analyzing-errors)
+- [04:06 Saving Stack Space with Boxing Technique](#0406-saving-stack-space-with-boxing-technique)
+	- [Boxing Technique](#boxing-technique)
+- [05:22 Creating Accounts Larger Than 10 Kilobytes](#0522-creating-accounts-larger-than-10-kilobytes)
+	- [Increasing Account Size](#increasing-account-size)
+- [06:39 Dynamic Account Size with Variable Data](#0639-dynamic-account-size-with-variable-data)
+	- [Dynamic Account Size](#dynamic-account-size)
+- [07:26 Increasing Account Data Size](#0726-increasing-account-data-size)
+	- [Increasing Account Data Size](#increasing-account-data-size)
+- [07:49 Sending Strings to Account](#0749-sending-strings-to-account)
+	- [Sending Strings to Account](#sending-strings-to-account)
+- [08:19 Backend Program Explanation](#0819-backend-program-explanation)
+	- [Backend Program Explanation](#backend-program-explanation)
+- [08:40 Running Tests and Memory Allocation Failure](#0840-running-tests-and-memory-allocation-failure)
+	- [Running Tests and Memory Allocation Failure](#running-tests-and-memory-allocation-failure)
+- [09:07 Re-alloc Instruction and Account Size](#0907-re-alloc-instruction-and-account-size)
+	- [Re-alloc Instruction and Account Size](#re-alloc-instruction-and-account-size)
+- [09:34 Zero Copy Accounts and Memory Limitations](#0934-zero-copy-accounts-and-memory-limitations)
+	- [Zero Copy Accounts and Memory Limitations](#zero-copy-accounts-and-memory-limitations)
+- [10:31 Creating Zero Copy Accounts](#1031-creating-zero-copy-accounts)
+	- [Creating Zero Copy Accounts](#creating-zero-copy-accounts)
+- [10:54 Setting Data Size for Zero Copy Account](#1054-setting-data-size-for-zero-copy-account)
+	- [Setting Data Size for Zero Copy Account](#setting-data-size-for-zero-copy-account)
+- [11:39 Account Loader and Partial Data Loading](#1139-account-loader-and-partial-data-loading)
+	- [Account Loader and Partial Data Loading](#account-loader-and-partial-data-loading)
+- [12:38 Saving Data in Zero Copy Account](#1238-saving-data-in-zero-copy-account)
+	- [Saving Data in Zero Copy Account](#saving-data-in-zero-copy-account)
+- [13:31 Interacting with Memory Directly](#1331-interacting-with-memory-directly)
+	- [Interacting with Memory Directly](#interacting-with-memory-directly)
+- [14:44](#1444)
+	- [Reading Data Again in Zero Copy t=884s](#reading-data-again-in-zero-copy-t884s)
+- [15:04](#1504)
+	- [Test Execution and Conclusion t=904s](#test-execution-and-conclusion-t904s)
+
+<!-- /TOC -->
+
+
+
 
 Section Overview: In this section, the speaker discusses the memory limitations on Solana and introduces the stack size limit, heap size limit, and PDA account limit.
 
@@ -192,7 +244,7 @@ Section Overview: The speaker highlights how direct interaction with memory allo
 
 Section Overview: The speaker discusses the complexities of reading data again in zero copy and the benefits of having 10 megabytes accounts.
 
-## Reading Data Again in Zero Copy (t=884s)
+## Reading Data Again in Zero Copy [14:44](https://youtu.be/zs_yU0IuJxc?t=884s)
 
 - When reading data again in zero copy, you need to pass in the index from where you want to read the screen.
 - Zero copy makes it more complicated as you need to figure out what you actually want to do.
@@ -202,7 +254,7 @@ Section Overview: The speaker discusses the complexities of reading data again i
 
 Section Overview: The speaker concludes the discussion on memory on Solana and zero copy, inviting questions from the audience.
 
-## Test Execution and Conclusion (t=904s)
+## Test Execution and Conclusion [15:04](https://youtu.be/zs_yU0IuJxc?t=904s)
 
 - The speaker quickly looks at how the test looks like when it runs.
 - The data is chuffed into a foreign system.

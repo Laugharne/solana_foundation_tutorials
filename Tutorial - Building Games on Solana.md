@@ -1,4 +1,107 @@
-# [](https://youtu.be/KT9anz_V9ns?t=0) Introduction to On-Chain Games on Solana
+<!-- TOC -->
+
+- [Introduction to On-Chain Games on Solana](#introduction-to-on-chain-games-on-solana)
+	- [Why Build Games on Solana?](#why-build-games-on-solana)
+- [02:15 Advantages of Building on Solana](#0215-advantages-of-building-on-solana)
+	- [Advantages](#advantages)
+- [03:35 Considerations for Building On-chain Games](#0335-considerations-for-building-on-chain-games)
+	- [Considerations](#considerations)
+- [04:19 Opportunities and New Developments](#0419-opportunities-and-new-developments)
+	- [Opportunities](#opportunities)
+- [Conclusion](#conclusion)
+- [06:24 Multiplayer Action Adventure Game on the Blockchain](#0624-multiplayer-action-adventure-game-on-the-blockchain)
+	- [Game Mechanics and Features](#game-mechanics-and-features)
+- [06:46 Solana Plays Pokemon - A Crowd-Controlled Game](#0646-solana-plays-pokemon---a-crowd-controlled-game)
+	- [Solana Plays Pokemon Mechanics](#solana-plays-pokemon-mechanics)
+- [08:56 Examples of On-chain Games](#0856-examples-of-on-chain-games)
+	- [Examples of On-chain Games](#examples-of-on-chain-games)
+- [10:42 Building "Tiny Adventure" Game on Solana](#1042-building-tiny-adventure-game-on-solana)
+	- [Building "Tiny Adventure"](#building-tiny-adventure)
+- [12:47 Setting up Endpoints and Airdrops](#1247-setting-up-endpoints-and-airdrops)
+	- [Selecting Endpoints](#selecting-endpoints)
+	- [Airdrops for Troubleshooting](#airdrops-for-troubleshooting)
+- [13:35 Deploying the Program](#1335-deploying-the-program)
+	- [Creating New Account for Deployment](#creating-new-account-for-deployment)
+	- [Deploying Unchained Program](#deploying-unchained-program)
+- [14:55 Running the Client Program](#1455-running-the-client-program)
+	- [Updating Program ID for Client Run](#updating-program-id-for-client-run)
+	- [Running the Client Program](#running-the-client-program)
+- [15:18 Understanding Solana Game Structure](#1518-understanding-solana-game-structure)
+	- [Creating Program Account for Level](#creating-program-account-for-level)
+	- [Initializing and Modifying Game Data Account](#initializing-and-modifying-game-data-account)
+- [16:31 Exploring Solana Program Structure](#1631-exploring-solana-program-structure)
+	- [Introduction to Solana Programs in Rust](#introduction-to-solana-programs-in-rust)
+	- [Key Components of Game Program](#key-components-of-game-program)
+- [17:44 Initializing Game Data Account](#1744-initializing-game-data-account)
+	- [Initializing Game Data Account](#initializing-game-data-account)
+- [18:31 Understanding System Program and Parallel Execution](#1831-understanding-system-program-and-parallel-execution)
+	- [Role of System Program](#role-of-system-program)
+	- [Achieving Parallel Execution](#achieving-parallel-execution)
+- [19:17 Moving Right and Left within the Game](#1917-moving-right-and-left-within-the-game)
+	- [Moving Right or Left](#moving-right-or-left)
+- [19:55 Player Position and Function](#1955-player-position-and-function)
+	- [Player Position and Function](#player-position-and-function)
+- [20:15 Initializing an Account and Printing Animation](#2015-initializing-an-account-and-printing-animation)
+	- [Initializing an Account and Printing Animation](#initializing-an-account-and-printing-animation)
+- [21:00 Moving Left and Right in the Game](#2100-moving-left-and-right-in-the-game)
+	- [Moving Left and Right in the Game](#moving-left-and-right-in-the-game)
+- [22:32 Building a Play-to-Earn Game](#2232-building-a-play-to-earn-game)
+	- [Building a Play-to-Earn Game](#building-a-play-to-earn-game)
+- [25:12 Transferring Soil into Chest Vault](#2512-transferring-soil-into-chest-vault)
+	- [Transferring Soil into Chest Vault](#transferring-soil-into-chest-vault)
+- [26:49 Creating a Soul and Chest Vault Account](#2649-creating-a-soul-and-chest-vault-account)
+	- [Creating the Soul Account](#creating-the-soul-account)
+	- [Creating the Chest Vault Account](#creating-the-chest-vault-account)
+	- [Moving and Collecting](#moving-and-collecting)
+- [29:00 JavaScript Client and Deployment](#2900-javascript-client-and-deployment)
+	- [Building and Deploying](#building-and-deploying)
+- [31:06 Adding Password Protection](#3106-adding-password-protection)
+	- [Implementing Password Protection](#implementing-password-protection)
+- [31:58 Testing Password Protection](#3158-testing-password-protection)
+	- [Testing with Incorrect Password](#testing-with-incorrect-password)
+	- [Testing with Correct Password](#testing-with-correct-password)
+- [32:24 Viewing Error Messages on Chain](#3224-viewing-error-messages-on-chain)
+	- [Adding Parameters for RPC Call](#adding-parameters-for-rpc-call)
+- [33:41 Exploring the Game and Error Handling](#3341-exploring-the-game-and-error-handling)
+	- [Game Exploration and Error Handling](#game-exploration-and-error-handling)
+- [34:55 Writing Programs Locally in Visual Studio](#3455-writing-programs-locally-in-visual-studio)
+	- [Writing Programs Locally with Auto-completion](#writing-programs-locally-with-auto-completion)
+- [36:05 Introduction to Tiny Adventure Game](#3605-introduction-to-tiny-adventure-game)
+	- [Introduction to Tiny Adventure Game](#introduction-to-tiny-adventure-game)
+- [36:25 Transaction Process in Solana](#3625-transaction-process-in-solana)
+	- [Transaction Process in Solana](#transaction-process-in-solana)
+- [38:19 Real-time Updates in Solana Games](#3819-real-time-updates-in-solana-games)
+	- [Real-time Updates with Websocket Connections](#real-time-updates-with-websocket-connections)
+- [39:03 Tiny Adventure 2 and Game Possibilities](#3903-tiny-adventure-2-and-game-possibilities)
+	- [Introduction to Tiny Adventure 2 and Game Possibilities](#introduction-to-tiny-adventure-2-and-game-possibilities)
+- [40:37 Connecting Wallet Configurations](#4037-connecting-wallet-configurations)
+	- [Generating a C# Client from IDL](#generating-a-c-client-from-idl)
+	- [Benefits of Using C# Client](#benefits-of-using-c-client)
+- [43:09 Comparing JavaScript and C#](#4309-comparing-javascript-and-c)
+	- [Similarities between JavaScript and C#](#similarities-between-javascript-and-c)
+	- [Creating Transactions in C#](#creating-transactions-in-c)
+	- [Unity SDK Features](#unity-sdk-features)
+- [44:55 Unity Client Overview](#4455-unity-client-overview)
+	- [Setting Up the Unity Client](#setting-up-the-unity-client)
+	- [Interacting with Solana in Unity](#interacting-with-solana-in-unity)
+- [46:34 React Client Example](#4634-react-client-example)
+	- [Building a React Client](#building-a-react-client)
+- [47:52 Building On-Chain Games on Solana](#4752-building-on-chain-games-on-solana)
+	- [Using Solana Mobile Wallet Adapter](#using-solana-mobile-wallet-adapter)
+	- [Building Transactions](#building-transactions)
+	- [Game Ideas](#game-ideas)
+	- [Additional Resources](#additional-resources)
+- [51:57 Conclusion and Contact Information](#5157-conclusion-and-contact-information)
+	- [Conclusion](#conclusion)
+
+<!-- /TOC -->
+
+
+
+
+
+
+# [Introduction to On-Chain Games on Solana](https://youtu.be/KT9anz_V9ns?t=0)
 
 Section Overview: In this section, the speaker introduces the topic of on-chain games on Solana and outlines the agenda for the session.
 
@@ -46,7 +149,7 @@ Section Overview: The speaker discusses current opportunities and new developmen
 # Conclusion
 
 The transcript provides an introduction to on-chain games on Solana, highlighting the advantages of building on Solana's blockchain infrastructure. It also covers considerations when developing on-chain games and mentions opportunities in the Solana ecosystem.
-# [t=384s] Multiplayer Action Adventure Game on the Blockchain
+# [06:24](https://youtu.be/KT9anz_V9ns?t=384) Multiplayer Action Adventure Game on the Blockchain
 
 Section Overview: The speaker introduces a multiplayer action adventure game built on the blockchain. The game consists of a grid with 4x4 tiles, each containing a player's public key and an Avatar public key (NFT). Players can spawn characters, kill other players to steal their soul, deposit and withdraw soil in the in-game wallet for fluid gameplay.
 
@@ -60,7 +163,7 @@ Section Overview: The speaker introduces a multiplayer action adventure game bui
 - Chest spawns allow collecting free soul.
 - The game works on mobile devices as well.
 
-# [t=406s] Solana Plays Pokemon - A Crowd-Controlled Game
+# [06:46](https://youtu.be/KT9anz_V9ns?t=406) Solana Plays Pokemon - A Crowd-Controlled Game
 
 Section Overview: The speaker introduces "Solana Plays Pokemon," a crowd-controlled game where players vote for certain key presses to control the game. Similar to "Twitch Plays Pokemon," this game allows multiple players to collectively play a Game Boy Pokemon game by voting for moves on-chain.
 
@@ -70,7 +173,7 @@ Section Overview: The speaker introduces "Solana Plays Pokemon," a crowd-control
 - It is similar to "Twitch Plays Pokemon" where chat controls the game.
 - Players collectively control the movements and actions of the character in real-time through voting on-chain.
 
-# [t=536s] Examples of On-chain Games
+# [08:56](https://youtu.be/KT9anz_V9ns?t=536) Examples of On-chain Games
 
 Section Overview: The speaker showcases various examples of games built on Solana's blockchain. These examples include Lumia Online, Lettercaster, and Kyojin Clash. Each game demonstrates different features and mechanics that can be implemented on-chain.
 
@@ -80,7 +183,7 @@ Section Overview: The speaker showcases various examples of games built on Solan
 - Lettercaster: An interesting game where players can walk around, collect items, and get tokens. It features a crank system where someone needs to press a button to proceed to the next round.
 - Kyojin Clash: An amazing on-chain game utilizing an entity component system called Arc. Players can have entities (NFTs) with traits, fight each other, and move units on a big map.
 
-# [t=642s] Building "Tiny Adventure" Game on Solana
+# [10:42](https://youtu.be/KT9anz_V9ns?t=642) Building "Tiny Adventure" Game on Solana
 
 Section Overview: The speaker demonstrates how to build a simple game called "Tiny Adventure" using Solara Playground. The game allows the player to move left or right and reach the end for a happy character animation.
 
@@ -252,7 +355,7 @@ Section Overview: This section explains how soil is transferred into the chest v
 - To overcome this limitation, lampards are subtracted from the chest vault account and added to the player account.
 
 Note: The summary has been created based on available information in English.
-# [t=1609s] Creating a Soul and Chest Vault Account
+# [26:49](https://youtu.be/KT9anz_V9ns?t=1609) Creating a Soul and Chest Vault Account
 
 Section Overview: In this section, the speaker explains how to create a soul account and a chest vault account in Solana.
 
@@ -274,7 +377,7 @@ Section Overview: In this section, the speaker explains how to create a soul acc
 - When moving or interacting with accounts in Solana, all relevant accounts need to be included in the instruction.
 - The program's main focus is on CPI (Cross Program Invocation) and transferring SOL from one account to another.
 
-# [t=1740s] JavaScript Client and Deployment
+# [29:00](https://youtu.be/KT9anz_V9ns?t=1740) JavaScript Client and Deployment
 
 Section Overview: This section covers deploying and testing using a JavaScript client.
 
@@ -284,7 +387,7 @@ Section Overview: This section covers deploying and testing using a JavaScript c
 - Checking the chest balance before sponsoring it shows that it has 0.1 SOL less after sponsorship.
 - Walking through positions one, two, and three demonstrates collecting the chest successfully.
 
-# [t=1866s] Adding Password Protection
+# [31:06](https://youtu.be/KT9anz_V9ns?t=1866) Adding Password Protection
 
 Section Overview: This section explains how to add password protection for collecting chests.
 
@@ -293,7 +396,7 @@ Section Overview: This section explains how to add password protection for colle
 - A password string is added for authentication purposes.
 - Checking if the password matches determines whether collection of chests is allowed or not.
   
-# [t=1918s] Testing Password Protection
+# [31:58](https://youtu.be/KT9anz_V9ns?t=1918) Testing Password Protection
 
 Section Overview: This section demonstrates testing password protection functionality.
 
@@ -305,7 +408,7 @@ Section Overview: This section demonstrates testing password protection function
 
 - Providing the correct password allows for successful collection of chests.
 
-# [t=1944s] Viewing Error Messages on Chain
+# [32:24](https://youtu.be/KT9anz_V9ns?t=1944) Viewing Error Messages on Chain
 
 Section Overview: This section explains how to view error messages on chain.
 

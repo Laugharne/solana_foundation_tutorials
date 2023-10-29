@@ -1,4 +1,28 @@
-# [](https://youtu.be/oKvWZoybv7Y?t=0) Introduction to Session Keys
+<!-- TOC -->
+
+- [Introduction to Session Keys](#introduction-to-session-keys)
+	- [Discovering Session Keys](#discovering-session-keys)
+- [00:18 Introducing Lumberjack Game and Current UX Issues](#0018-introducing-lumberjack-game-and-current-ux-issues)
+	- [Lumberjack Game and Current UX Issues](#lumberjack-game-and-current-ux-issues)
+- [00:39 Using Session Keys for Improved UX](#0039-using-session-keys-for-improved-ux)
+	- [Creating Sessions with Session Keys](#creating-sessions-with-session-keys)
+- [01:26 Revoking Sessions and Security Considerations](#0126-revoking-sessions-and-security-considerations)
+	- [Revoking Sessions and Security](#revoking-sessions-and-security)
+- [02:07 Code Implementation and Session Handling](#0207-code-implementation-and-session-handling)
+	- [Implementation of Session Handling](#implementation-of-session-handling)
+- [03:10 React Client for Session Keys](#0310-react-client-for-session-keys)
+	- [React Client Features](#react-client-features)
+- [04:43 Conclusion and Open Source Availability](#0443-conclusion-and-open-source-availability)
+	- [Convenience and Open Source Availability](#convenience-and-open-source-availability)
+
+<!-- /TOC -->
+
+
+
+
+
+
+# [Introduction to Session Keys](https://youtu.be/oKvWZoybv7Y?t=0)
 
 Section Overview: In this section, the speaker introduces a new open-source tool called Session Keys that can be used to improve the user experience (UX) of applications. The speaker explains how they discovered the tool and its potential benefits.
 
